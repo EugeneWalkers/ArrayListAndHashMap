@@ -8,8 +8,9 @@ public class Main {
         arrayList.add(4);
         System.out.println(arrayList.get(0) + ":" + arrayList.get(1) + ":" + arrayList.get(2));
         CustomHashMap<String, Integer> customHashMap = new CustomHashMap<>();
-        customHashMap.put("lol", 1);
-        customHashMap.put("unlol", 2);
-        System.out.println(customHashMap.get("lol"));
+        customHashMap.put("first", 1);
+        customHashMap.put("second", 2);
+        System.out.println(customHashMap.get("first"));
+        System.out.println(customHashMap.get("unfirst"));
     }
 }

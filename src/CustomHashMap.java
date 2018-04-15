@@ -1,4 +1,5 @@
 import javafx.util.Pair;
+import org.jetbrains.annotations.NotNull;
 
 import java.util.Collection;
 import java.util.Map;
@@ -51,7 +52,7 @@ public class CustomHashMap<K, V> implements Map<K, V> {
     public V get(Object key) {
         if (key != null){
             for (int i=0; i<size; i++){
-                if (key.equals(elements[i].getKey())){
+                if (elements[i] != null && key.equals(elements[i].getKey())){
                     return elements[i].getValue();
                 }
             }
@@ -68,7 +69,7 @@ public class CustomHashMap<K, V> implements Map<K, V> {
         if (index != size){
             elements[index] = new HashElement<>(key, value);
         }
-        return null;
+        return value;
     }
 
     @Override
@@ -94,16 +95,19 @@ public class CustomHashMap<K, V> implements Map<K, V> {
         elements = new HashElement[size];
     }
 
+    @NotNull
     @Override
     public Set<K> keySet() {
         return null;
     }
 
+    @NotNull
     @Override
     public Collection<V> values() {
         return null;
     }
 
+    @NotNull
     @Override
     public Set<Entry<K, V>> entrySet() {
         return null;
